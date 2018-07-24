@@ -1,21 +1,9 @@
 import mongoose from 'mongoose'
 
-const playlistSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: [true, 'Playlist must have title']
-  },
+export const schema = {
+  
+}
 
-  songs: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'song'
-  }],
-
-  favorite: {
-    type: Boolean,
-    required: true,
-    default: false
-  }
-})
+const playlistSchema = new mongoose.Schema(schema)
 
 export const Playlist = mongoose.model('playlist', playlistSchema)
